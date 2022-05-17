@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  userservice:
+    image: ${DOCKER_REGISTRY-}userservice
+    build:
+      context: .
+      dockerfile: UserService/Dockerfile
+
+  productservice:
+    image: ${DOCKER_REGISTRY-}productservice
+    build:
+      context: .
+      dockerfile: ProductService/Dockerfile
+
+
+  orderservice:
+    image: ${DOCKER_REGISTRY-}orderservice
+    build:
+      context: .
+      dockerfile: OrderService/Dockerfile
+
+
+  orderprocessor:
+    image: ${DOCKER_REGISTRY-}orderprocessor
+    build:
+      context: .
+      dockerfile: OrderProcessor/Dockerfile
+
